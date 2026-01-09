@@ -1,34 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: daniah <daniah@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/27 11:09:45 by daniah            #+#    #+#             */
-/*   Updated: 2026/01/07 11:12:01 by daniah           ###   ########.fr       */
+/*   Created: 2026/12/03 23:54:53 by daniah            #+#    #+#             */
+/*   Updated: 2026/01/09 23:56:10 by daniah           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-#define ZOMBIE_HPP
+#ifndef FIXED_HPP
+#define FIXED_HPP
 
-#include <string>
 #include <iostream>
 
-class Zombie
+class Fixed
 {
 private:
-	std::string name;
+	int 	value;
+	static const int bits = 8;
 
 public:
-	Zombie();
-	~Zombie();
+	Fixed();
+	Fixed(const Fixed& other);
+	Fixed& operator=(const Fixed& other);
+	~Fixed();
 	
-	void setName(std::string n);
-	void announce(void);
+	int getRawBits(void) const;
+	void setRawBits(int const raw);
 };
-
-Zombie* zombieHorde(int N, std::string name);
 
 #endif

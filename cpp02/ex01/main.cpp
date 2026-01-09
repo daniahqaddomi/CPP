@@ -5,29 +5,32 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: daniah <daniah@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/28 11:16:40 by daniah            #+#    #+#             */
-/*   Updated: 2026/01/07 11:17:24 by daniah           ###   ########.fr       */
+/*   Created: 2026/12/10 23:58:11 by daniah            #+#    #+#             */
+/*   Updated: 2026/01/09 23:58:23 by daniah           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include <string>
+#include "Fixed.hpp"
 
-int main()
+int main(void)
 {
-	std::string str = "HI THIS IS BRAIN";
-	std::string* stringPTR = &str;
-	std::string& stringREF = str;
+	Fixed a;
+	Fixed const b(10);
+	Fixed const c(42.42f);
+	Fixed const d(b);
 	
-	std::cout << "Memory address of str:        " << &str << std::endl;
-	std::cout << "Memory address in stringPTR:  " << stringPTR << std::endl;
-	std::cout << "Memory address in stringREF:  " << &stringREF << std::endl;
+	a = Fixed(1234.4321f);
 	
-	std::cout << std::endl;
+	std::cout << "a is " << a << std::endl;
+	std::cout << "b is " << b << std::endl;
+	std::cout << "c is " << c << std::endl;
+	std::cout << "d is " << d << std::endl;
 	
-	std::cout << "Value of str:        " << str << std::endl;
-	std::cout << "Value of stringPTR:  " << *stringPTR << std::endl;
-	std::cout << "Value of stringREF:  " << stringREF << std::endl;
+	std::cout << "a is " << a.toInt() << " as integer" << std::endl;
+	std::cout << "b is " << b.toInt() << " as integer" << std::endl;
+	std::cout << "c is " << c.toInt() << " as integer" << std::endl;
+	std::cout << "d is " << d.toInt() << " as integer" << std::endl;
 	
 	return 0;
 }

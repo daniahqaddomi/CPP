@@ -1,38 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: daniah <daniah@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/29 16:55:12 by daniah            #+#    #+#             */
-/*   Updated: 2026/01/05 23:54:59 by daniah           ###   ########.fr       */
+/*   Created: 2026/12/10 23:56:55 by daniah            #+#    #+#             */
+/*   Updated: 2026/01/09 23:57:21 by daniah           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef FIXED_HPP
+#define FIXED_HPP
 
-#ifndef PHONEBOOK_HPP
-#define PHONEBOOK_HPP
-
-#include "Contact.hpp"
 #include <iostream>
-#include <iomanip>
 
-class PhoneBook
+class Fixed
 {
 private:
-	Contact contacts[8];
-	int count;
-	int index;
+	int value;
+	static const int bits = 8;
 
 public:
-	PhoneBook();
-	~PhoneBook();
+	Fixed();
+	Fixed(const int n);
+	Fixed(const float f);
+	Fixed(const Fixed& other);
+	Fixed& operator=(const Fixed& other);
+	~Fixed();
 	
-	void addContact();
-	void searchContact();
-	void displayContacts();
-	void displayContactDetails(int index);
+	int getRawBits(void) const;
+	void setRawBits(int const raw);
+	
+	float toFloat(void) const;
+	int toInt(void) const;
 };
+
+std::ostream& operator<<(std::ostream& out, const Fixed& fixed);
 
 #endif
