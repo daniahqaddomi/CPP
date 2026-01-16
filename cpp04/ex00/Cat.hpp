@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: daniah <daniah@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/12/03 23:53:06 by daniah            #+#    #+#             */
-/*   Updated: 2026/01/16 23:52:01 by daniah           ###   ########.fr       */
+/*   Created: 2026/01/12 00:31:57 by daniah            #+#    #+#             */
+/*   Updated: 2026/01/17 00:32:16 by daniah           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include "Fixed.hpp"
+#ifndef CAT_HPP
+#define CAT_HPP
 
-int main( void ) 
+#include "Animal.hpp"
+
+class Cat : public Animal
 {
-Fixed a;
-Fixed b( a );
-Fixed c;
+public:
+	Cat();
+	Cat(const Cat& other);
+	Cat& operator=(const Cat& other);
+	~Cat();
+	
+	void makeSound() const;
+};
 
-c = b;
-std::cout << a.getRawBits() << std::endl;
-std::cout << b.getRawBits() << std::endl;
-std::cout << c.getRawBits() << std::endl;
-
-return 0;
-}
+#endif

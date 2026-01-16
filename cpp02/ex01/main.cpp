@@ -6,7 +6,7 @@
 /*   By: daniah <daniah@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/12/10 23:58:11 by daniah            #+#    #+#             */
-/*   Updated: 2026/01/09 23:58:23 by daniah           ###   ########.fr       */
+/*   Updated: 2026/01/16 23:54:31 by daniah           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 int main(void)
 {
-	Fixed a;
+	Fixed 		a;
 	Fixed const b(10);
 	Fixed const c(42.42f);
 	Fixed const d(b);

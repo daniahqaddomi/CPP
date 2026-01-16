@@ -1,41 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: daniah <daniah@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/12/10 23:56:55 by daniah            #+#    #+#             */
-/*   Updated: 2026/01/16 23:54:07 by daniah           ###   ########.fr       */
+/*   Created: 2026/01/02 00:10:23 by daniah            #+#    #+#             */
+/*   Updated: 2026/01/17 00:11:39 by daniah           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-#define FIXED_HPP
+#ifndef CLAPTRAP_HPP
+#define CLAPTRAP_HPP
 
+#include <string>
 #include <iostream>
 
-class Fixed
+class ClapTrap
 {
 private:
-	int		value;
-	static const int bits = 8;
+	std::string _name;
+	unsigned int _hit_points;
+	unsigned int _energy_points;
+	unsigned int _attack_damage;
 
 public:
-	Fixed();
-	Fixed(const int n);
-	Fixed(const float f);
-	Fixed(const Fixed& other);
-	Fixed& operator=(const Fixed& other);
-	~Fixed();
+	ClapTrap();
+	ClapTrap(std::string name);
+	ClapTrap(const ClapTrap& other);
+	ClapTrap& operator=(const ClapTrap& other);
+	~ClapTrap();
 	
-	int getRawBits(void) const;
-	void setRawBits(int const raw);
-	
-	float toFloat(void) const;
-	int toInt(void) const;
+	void attack(const std::string& target);
+	void takeDamage(unsigned int amount);
+	void beRepaired(unsigned int amount);
 };
-
-std::ostream& operator<<(std::ostream& out, const Fixed& fixed);
 
 #endif

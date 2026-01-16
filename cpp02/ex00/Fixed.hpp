@@ -6,7 +6,7 @@
 /*   By: daniah <daniah@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/12/03 23:54:53 by daniah            #+#    #+#             */
-/*   Updated: 2026/01/09 23:56:10 by daniah           ###   ########.fr       */
+/*   Updated: 2026/01/16 23:45:19 by daniah           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 #define FIXED_HPP
 
 #include <iostream>
-
 class Fixed
 {
 private:

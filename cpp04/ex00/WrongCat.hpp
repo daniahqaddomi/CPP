@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: daniah <daniah@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/12/03 23:53:06 by daniah            #+#    #+#             */
-/*   Updated: 2026/01/16 23:52:01 by daniah           ###   ########.fr       */
+/*   Created: 2026/01/13 00:33:35 by daniah            #+#    #+#             */
+/*   Updated: 2026/01/17 00:34:07 by daniah           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include "Fixed.hpp"
+#ifndef WRONGCAT_HPP
+#define WRONGCAT_HPP
 
-int main( void ) 
+#include "WrongAnimal.hpp"
+
+class WrongCat : public WrongAnimal
 {
-Fixed a;
-Fixed b( a );
-Fixed c;
+public:
+	WrongCat();
+	WrongCat(const WrongCat& other);
+	WrongCat& operator=(const WrongCat& other);
+	~WrongCat();
+	
+	void makeSound() const;
+};
 
-c = b;
-std::cout << a.getRawBits() << std::endl;
-std::cout << b.getRawBits() << std::endl;
-std::cout << c.getRawBits() << std::endl;
-
-return 0;
-}
+#endif
