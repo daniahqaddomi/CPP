@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: daniah <daniah@student.42.fr>              +#+  +:+       +#+        */
+/*   By: dqaddomi <dqaddomi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/27 11:07:38 by daniah            #+#    #+#             */
-/*   Updated: 2026/01/09 23:22:00 by daniah           ###   ########.fr       */
+/*   Updated: 2026/01/15 18:22:44 by dqaddomi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int main()
 	int     i;
 	
 	std::cout << "Creating horde of " << hordeSize << " zombies:" << std::endl;
-	horde = zombieHorde(hordeSize, "Walker");
+	horde = zombieHorde(hordeSize, "Zombie");
 	
 	std::cout << "\nZombies announcing themselves:" << std::endl;
 	i = 0;
@@ -29,9 +29,9 @@ int main()
 		i++;
 	}
 	
-	std::cout << "\nDeleting the horde:" << std::endl;
+	std::cout << "\nDeleting the zombies horde:" << std::endl;
 	delete[] horde;
 	
 	std::cout << "\nProgram ending..." << std::endl;
-	return 0;
+	return (0);
 }

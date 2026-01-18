@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: daniah <daniah@student.42.fr>              +#+  +:+       +#+        */
+/*   By: dqaddomi <dqaddomi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/17 12:55:39 by daniah            #+#    #+#             */
-/*   Updated: 2026/01/07 11:30:12 by daniah           ###   ########.fr       */
+/*   Updated: 2026/01/18 09:54:24 by dqaddomi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ int main()
 	{
 		Weapon club = Weapon("crude spiked club");
 		
-		HumanA bob("Bob", club);
-		bob.attack();
+		HumanA Player1("Player1", club);
+		Player1.attack();
 		club.setType("some other type of club");
-		bob.attack();
+		Player1.attack();
 	}
 	{
 		Weapon club = Weapon("crude spiked club");
@@ -34,5 +34,5 @@ int main()
 		jim.attack();
 	}
 	
-	return 0;
+	return (0);
 }

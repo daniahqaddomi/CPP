@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: daniah <daniah@student.42.fr>              +#+  +:+       +#+        */
+/*   By: dqaddomi <dqaddomi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/29 16:55:12 by daniah            #+#    #+#             */
-/*   Updated: 2026/01/05 23:54:59 by daniah           ###   ########.fr       */
+/*   Created: 2025/11/20 11:58:10 by dqaddomi          #+#    #+#             */
+/*   Updated: 2025/11/20 12:34:04 by dqaddomi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 PhoneBook::PhoneBook()
 {
-	this->count = 0;
-	this->index = 0;
+	this->contactCount = 0;
+	this->oldestIndex = 0;
 }
 
 PhoneBook::~PhoneBook()
@@ -33,8 +33,6 @@ static std::string truncateString(std::string str)
 static std::string getInput(std::string prompt)
 {
 	std::string input;
-	size_t i;
-	bool hasContent;
 	
 	while (1)
 	{
@@ -44,20 +42,9 @@ static std::string getInput(std::string prompt)
 			std::cout << std::endl;
 			exit(0);
 		}
-		hasContent = false;
-		i = 0;
-		while (i < input.length())
-		{
-			if (input[i] != ' ' && input[i] != '\t')
-			{
-				hasContent = true;
-				break;
-			}
-			i++;
-		}
-		if (hasContent)
+		if (input.length() > 0)
 			return (input);
-		std::cout << "Field cannot be empty" << std::endl;
+		std::cout << "Field cannot be empty!" << std::endl;
 	}
 }
 
@@ -75,17 +62,17 @@ void PhoneBook::addContact()
 	phoneNumber = getInput("Enter phone number: ");
 	darkestSecret = getInput("Enter darkest secret: ");
 	
-	this->contacts[this->index].setFirstName(firstName);
-	this->contacts[this->index].setLastName(lastName);
-	this->contacts[this->index].setNickname(nickname);
-	this->contacts[this->index].setPhoneNumber(phoneNumber);
-	this->contacts[this->index].setDarkestSecret(darkestSecret);
+	this->contacts[this->oldestIndex].setFirstName(firstName);
+	this->contacts[this->oldestIndex].setLastName(lastName);
+	this->contacts[this->oldestIndex].setNickname(nickname);
+	this->contacts[this->oldestIndex].setPhoneNumber(phoneNumber);
+	this->contacts[this->oldestIndex].setDarkestSecret(darkestSecret);
 	
-	this->index = (this->index + 1) % 8;
-	if (this->count < 8)
-		this->count++;
+	this->oldestIndex = (this->oldestIndex + 1) % 8;
+	if (this->contactCount < 8)
+		this->contactCount++;
 	
-	std::cout << "Contact added successfully" << std::endl;
+	std::cout << "Contact added successfully!" << std::endl;
 }
 
 void PhoneBook::displayContacts()
@@ -98,7 +85,7 @@ void PhoneBook::displayContacts()
 	std::cout << std::setw(10) << "Nickname" << std::endl;
 	
 	i = 0;
-	while (i < this->count)
+	while (i < this->contactCount)
 	{
 		std::cout << std::setw(10) << i << "|";
 		std::cout << std::setw(10) << truncateString(this->contacts[i].getFirstName()) << "|";
@@ -122,9 +109,9 @@ void PhoneBook::searchContact()
 	std::string input;
 	int index;
 	
-	if (this->count == 0)
+	if (this->contactCount == 0)
 	{
-		std::cout << "Phonebook is empty" << std::endl;
+		std::cout << "Phonebook is empty!" << std::endl;
 		return;
 	}
 	
@@ -139,17 +126,16 @@ void PhoneBook::searchContact()
 	
 	if (input.length() != 1 || input[0] < '0' || input[0] > '7')
 	{
-		std::cout << "Invalid index" << std::endl;
+		std::cout << "Invalid index!" << std::endl;
 		return;
 	}
 	
 	index = input[0] - '0';
-	if (index >= this->count)
+	if (index >= this->contactCount)
 	{
-		std::cout << "Index out of range" << std::endl;
+		std::cout << "Index out of range!" << std::endl;
 		return;
 	}
 	
 	this->displayContactDetails(index);
 }
-

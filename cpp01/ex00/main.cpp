@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: daniah <daniah@student.42.fr>              +#+  +:+       +#+        */
+/*   By: dqaddomi <dqaddomi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/27 11:04:36 by daniah            #+#    #+#             */
-/*   Updated: 2026/01/07 12:46:12 by daniah           ###   ########.fr       */
+/*   Updated: 2026/01/15 17:32:04 by dqaddomi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,5 @@ int main()
 	delete heapZombie;
 	
 	std::cout << "\nProgram ending..." << std::endl;
-	return 0;
+	return (0);
 }

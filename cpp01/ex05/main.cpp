@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: daniah <daniah@student.42.fr>              +#+  +:+       +#+        */
+/*   By: dqaddomi <dqaddomi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/25 06:34:26 by daniah            #+#    #+#             */
-/*   Updated: 2026/01/09 23:43:11 by daniah           ###   ########.fr       */
+/*   Updated: 2026/01/18 18:18:25 by dqaddomi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,11 @@ int main()
 	std::cout << "========================================" << std::endl;
 	std::cout << std::endl;
 	
-	harl.complain("DEBUG");
+	// harl.complain("DEBUG");
 	harl.complain("INFO");
-	harl.complain("WARNING");
-	harl.complain("ERROR");
-	harl.complain("RANDOM");
+	// harl.complain("WARNING");
+	// harl.complain("ERROR");
+	// harl.complain("RANDOM");
 	
-	return 0;
+	return (0);
 }

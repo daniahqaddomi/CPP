@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: daniah <daniah@student.42.fr>              +#+  +:+       +#+        */
+/*   By: dqaddomi <dqaddomi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/29 16:55:12 by daniah            #+#    #+#             */
-/*   Updated: 2026/01/05 23:54:59 by daniah           ###   ########.fr       */
+/*   Created: 2025/11/20 11:57:49 by dqaddomi          #+#    #+#             */
+/*   Updated: 2025/11/20 12:00:11 by dqaddomi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
+// PhoneBook.hpp
 #ifndef PHONEBOOK_HPP
 #define PHONEBOOK_HPP
 
-#include "Contact.hpp"
+#include "contact.hpp"
 #include <iostream>
 #include <iomanip>
 
@@ -22,8 +22,8 @@ class PhoneBook
 {
 private:
 	Contact contacts[8];
-	int count;
-	int index;
+	int contactCount;
+	int oldestIndex;
 
 public:
 	PhoneBook();

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: daniah <daniah@student.42.fr>              +#+  +:+       +#+        */
+/*   By: dqaddomi <dqaddomi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/28 11:16:40 by daniah            #+#    #+#             */
-/*   Updated: 2026/01/07 11:17:24 by daniah           ###   ########.fr       */
+/*   Updated: 2026/01/15 17:38:42 by dqaddomi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 int main()
 {
 	std::string str = "HI THIS IS BRAIN";
-	std::string* stringPTR = &str;
-	std::string& stringREF = str;
+	std::string* stringPTR = &str; //pointer to str
+	std::string& stringREF = str; //reference to str
 	
 	std::cout << "Memory address of str:        " << &str << std::endl;
 	std::cout << "Memory address in stringPTR:  " << stringPTR << std::endl;
@@ -29,5 +29,5 @@ int main()
 	std::cout << "Value of stringPTR:  " << *stringPTR << std::endl;
 	std::cout << "Value of stringREF:  " << stringREF << std::endl;
 	
-	return 0;
+	return (0);
 }

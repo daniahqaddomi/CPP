@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: daniah <daniah@student.42.fr>              +#+  +:+       +#+        */
+/*   By: dqaddomi <dqaddomi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/29 16:55:12 by daniah            #+#    #+#             */
-/*   Updated: 2026/01/05 23:17:18 by daniah           ###   ########.fr       */
+/*   Created: 2025/11/19 20:38:01 by dqaddomi          #+#    #+#             */
+/*   Updated: 2025/11/20 12:01:48 by dqaddomi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 int main()
 {
 	PhoneBook phoneBook;
-
 	std::string command;
 	
 	while (1)
@@ -34,7 +33,7 @@ int main()
 		else if (command == "EXIT")
 			break;
 		else
-			std::cout << "Invalid command" << std::endl;
+			std::cout << "Invalid command!" << std::endl;
 	}
 	
 	return (0);

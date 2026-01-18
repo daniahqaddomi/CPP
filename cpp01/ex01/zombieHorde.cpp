@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   zombieHorde.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: daniah <daniah@student.42.fr>              +#+  +:+       +#+        */
+/*   By: dqaddomi <dqaddomi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/27 11:08:15 by daniah            #+#    #+#             */
-/*   Updated: 2026/01/07 11:12:14 by daniah           ###   ########.fr       */
+/*   Updated: 2026/01/15 17:32:22 by dqaddomi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ Zombie* zombieHorde(int N, std::string name)
 	int i;
 	
 	if (N <= 0)
-		return NULL;
+		return (NULL);
 	
 	horde = new Zombie[N];
 	
@@ -29,5 +29,5 @@ Zombie* zombieHorde(int N, std::string name)
 		i++;
 	}
 	
-	return horde;
+	return (horde);
 }
